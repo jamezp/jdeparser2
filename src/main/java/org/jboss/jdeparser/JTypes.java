@@ -49,6 +49,10 @@ public final class JTypes {
         return typeNamed(name);
     }
 
+    public static JType _(CharSequence name) {
+        return typeNamed(name.toString());
+    }
+
     public static JType typeOf(JClassDef classDef) {
         return classDef.erasedType();
     }

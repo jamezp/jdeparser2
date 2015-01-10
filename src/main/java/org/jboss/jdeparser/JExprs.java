@@ -190,6 +190,16 @@ public final class JExprs {
         return name(name);
     }
 
+    /**
+     * Return a name expression.
+     *
+     * @param name the name
+     * @return the expression
+     */
+    public static JAssignableExpr $(CharSequence name) {
+        return name(name.toString());
+    }
+
     public static JAssignableExpr $(JParamDeclaration paramDeclaration) {
         return name(paramDeclaration.name());
     }
@@ -199,6 +209,10 @@ public final class JExprs {
     }
 
     private static final ThreadLocal<LinkedHashMap<String, JAssignableExpr>> cache = new CachingThreadLocal<>();
+
+    public static JAssignableExpr name(CharSequence name) {
+        return name(name.toString());
+    }
 
     public static JAssignableExpr name(String name) {
         final LinkedHashMap<String, JAssignableExpr> map = cache.get();
