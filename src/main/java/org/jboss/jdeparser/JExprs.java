@@ -30,6 +30,16 @@ public final class JExprs {
     private JExprs() {}
 
     /**
+     * Generate an {@code short} value in decimal base.
+     *
+     * @param val the value
+     * @return the value expression
+     */
+    public static JExpr decimal(short val) {
+        return new IntegerJExpr(val, 10).cast(JType.SHORT);
+    }
+
+    /**
      * Generate an {@code int} value in decimal base.
      *
      * @param val the value
@@ -70,6 +80,16 @@ public final class JExprs {
     }
 
     /**
+     * Generate an {@code short} value in hexadecimal base.
+     *
+     * @param val the value
+     * @return the value expression
+     */
+    public static JExpr hex(short val) {
+        return new IntegerJExpr(val, 16).cast(JType.SHORT);
+    }
+
+    /**
      * Generate an {@code int} value in hexadecimal base.
      *
      * @param val the value
@@ -107,6 +127,16 @@ public final class JExprs {
      */
     public static JExpr hex(double val) {
         return new HexDoubleJExpr(val);
+    }
+
+    /**
+     * Generate an {@code short} value in binary base.
+     *
+     * @param val the value
+     * @return the value expression
+     */
+    public static JExpr binary(short val) {
+        return new IntegerJExpr(val, 2).cast(JType.SHORT);
     }
 
     /**
