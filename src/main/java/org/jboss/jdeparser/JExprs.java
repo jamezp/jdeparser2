@@ -30,6 +30,16 @@ public final class JExprs {
     private JExprs() {}
 
     /**
+     * Generate an {@code byte} value.
+     *
+     * @param val the value
+     * @return the value expression
+     */
+    public static JExpr _byte(byte val) {
+        return new IntegerJExpr(val, 10).cast(JType.BYTE);
+    }
+
+    /**
      * Generate an {@code short} value in decimal base.
      *
      * @param val the value
